@@ -1,4 +1,4 @@
-{% set version = "4.0.0" %}
+{% set version = "5.0.0" %}
 
 package:
   name: azure
@@ -7,12 +7,12 @@ package:
 source:
   fn: azure-{{ version }}.zip
   url: https://pypi.io/packages/source/a/azure/azure-{{ version }}.zip
-  md5: 6e614825d35adb90bfd8c878cbae833c
+  md5: 21895fddb009cde6c74e22bf7c30030a
 
 
 build:
   noarch: python
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   number: 0
 
 requirements:
@@ -43,7 +43,7 @@ about:
   license: MIT
   license_file: LICENSE.txt
   license_family: MIT
-  summary: 'Microsoft Azure Client Libraries for Python'
+  summary: Microsoft Azure Client Libraries for Python
 
 extra:
   recipe-maintainers:
